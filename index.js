@@ -12,17 +12,16 @@ app.get('/', function(req, res){
 io.on('connection', function(socket){
     console.log('a user connected');
 
-    // socket.on('public message', function(msg) {
-    //     io.emit('public board message', msg);
-    // });
+    socket.on('public message', function(msg) {
+      console.log(msg);
+        io.emit('public board message', msg);
+    });
 
-    const msessage = {
-        username: msg.username,
-        message: msg.message,
-        pic: msg.pic,
-    };
-
-    io.emit('public board message', msg);
+    // const msessage = {
+    //     username: msg.username,
+    //     message: msg.message,
+    //     pic: msg.pic,
+    // };
 
     socket.on('disconnect', function(){
         console.log('user disconnected');

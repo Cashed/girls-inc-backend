@@ -2,9 +2,10 @@ $(function () {
     const socket = io();
 
     socket.on('public board message', function(msg) {
+        const avatar = $('<img class="avatar">').attr('src', msg.pic);
         const user = $('<div class="username">').text(msg.username + ":");
         const text = $('<p class="message-text">').text(msg.message); 
-        const message = $('<li class="message">').append(user).append(text);
+        const message = $('<li class="message">').append(avatar).append(user).append(text);
         $('#messages').append(message);
     });
-  });
+});
