@@ -14,14 +14,12 @@ io.on('connection', function(socket){
 
     socket.on('public message', function(msg) {
       console.log(msg);
-        io.emit('public board message', msg);
+      io.emit('public board message', msg);
     });
 
-    // const msessage = {
-    //     username: msg.username,
-    //     message: msg.message,
-    //     pic: msg.pic,
-    // };
+    socket.on('change background', function(background) {
+      io.emit('background change', background);
+    });
 
     socket.on('disconnect', function(){
         console.log('user disconnected');
