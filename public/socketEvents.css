@@ -45,6 +45,7 @@ form button {
     margin-top: 75px;
     max-height: calc(100vh - 150px); 
     overflow: scroll;
+    background-color: white;
 }
 
 .message {
