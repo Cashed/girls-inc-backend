@@ -7,5 +7,6 @@ $(function () {
         const text = $('<p class="message-text">').text(msg.message); 
         const message = $('<li class="message">').append(avatar).append(user).append(text);
         $('#messages').append(message);
+        $('#messages')[0].scrollTop = $('#messages')[0].scrollHeight;
     });
 });
